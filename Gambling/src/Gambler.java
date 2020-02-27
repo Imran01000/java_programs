@@ -2,6 +2,8 @@ import java.util.*;
 public class Gambler {
 	static int stake=100;
 	static int bet=1;
+	final static int full=150;
+	final static int half=50;
 	public static void main(String[] args) {
 		
 		Gambler g=new Gambler();
@@ -13,14 +15,18 @@ public class Gambler {
 			if(played==1)
 			{
 				System.out.println("You win bet");
-				stake++;	
-				break;
+				stake++;
+				if(stake==full)
+					break;
+				
 			}
 			else
 			{
 				System.out.println("you loss bet");
 				stake=stake-bet;
-				break;
+				if(stake==half)
+					break;
+				
 			}
 		}
 		System.out.println("Current stake condition : "+stake);
