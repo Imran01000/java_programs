@@ -13,7 +13,10 @@ public class Gambler {
 	static int count0=0;
 	static int winMoney=0;
 	static int lossMoney=0;
-	
+	static int luckyDay=0;
+	static int unluckyDay=0;
+	static int temp=0;
+			
 	//Array declaration.
 	static int arrayDays[]=new int[20];
 
@@ -51,14 +54,35 @@ public class Gambler {
 				winMoney=count1*half;
 				lossMoney=count0*half;
 			
-		//Displaying each days loss and win in array.	
-			for (int i = 0; i <arrayDays.length; i++) {
-				System.out.print(arrayDays[i]+" ");
+		//Displaying each days loss and win in array.
+				luckyDay=arrayDays[0];
+				unluckyDay=arrayDays[0];
+			for (int i = 0; i < arrayDays.length; i++) {
+					System.out.print(arrayDays[i]+" ");
+			}
+				System.out.println();
+			for (int j = 0; j < arrayDays.length; j++) {
+				if(luckyDay < arrayDays[j])			//Getting larger value
+				{
+					luckyDay=arrayDays[j];	
+				}
+				if(unluckyDay > arrayDays[j])			// Getting smaller value
+				{
+					unluckyDay=arrayDays[j];
+				}
 			}
 				System.out.println();
 				System.out.println("Total win amount = "+winMoney);
-				System.out.println("Total loss amount = "+lossMoney);		
+				System.out.println("Total loss amount = "+lossMoney);
+
+		//getting in which day and  how many days that larger and smaller value generated.
+				for (int k = 0; k < arrayDays.length; k++) {
+					if(arrayDays[k]==luckyDay)
+						System.out.println("Gambler luckyday : "+(k+1));
+					if(arrayDays[k]==unluckyDay)
+						System.out.println("Gambler unluckyday : "+(k+1));
+				}
 	}
-}	
+}
 
 
