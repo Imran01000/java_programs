@@ -29,6 +29,7 @@ public class Gambler {
 			{
 				System.out.println("You win bet");
 				stakeTemp=stakeTemp+half;
+				System.out.println("You win by 50 ");
 				System.out.println(stakeTemp);
 				count1++;
 				
@@ -38,24 +39,25 @@ public class Gambler {
 			{
 				System.out.println("you loss bet");
 				stakeTemp=stakeTemp-half;
+				System.out.println("You loss ny 50");
 				System.out.println(stake);
 				count0++;
 				
 			}
 				arrayDays[days]=stakeTemp;	
 		}
-			System.out.println("Number of times win : "+count1);
-			System.out.println("Number of times loss : "+count0);
-			winMoney=count1*half;
-			lossMoney=count0*half;
+				System.out.println("Number of times win : "+count1);
+				System.out.println("Number of times loss : "+count0);
+				winMoney=count1*half;
+				lossMoney=count0*half;
 			
 		//Displaying each days loss and win in array.	
 			for (int i = 0; i <arrayDays.length; i++) {
 				System.out.print(arrayDays[i]+" ");
 			}
-			System.out.println();
-			System.out.println("Total win amount = "+winMoney);
-			System.out.println("Total loss amount = "+lossMoney);		
+				System.out.println();
+				System.out.println("Total win amount = "+winMoney);
+				System.out.println("Total loss amount = "+lossMoney);		
 	}
 }	
 
