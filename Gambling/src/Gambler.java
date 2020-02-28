@@ -2,8 +2,7 @@ import java.util.*;
 public class Gambler {
 	
 	//Variable declaration.
-	static int won=0;
-	static int loss=0;
+	static int month=0;
 	static int stake=100;
 	static int stakeTemp=stake;
 	static int bet=1;
@@ -16,16 +15,19 @@ public class Gambler {
 	static int luckyDay=0;
 	static int unluckyDay=0;
 	static int temp=0;
-			
-	//Array declaration.
-	static int arrayDays[]=new int[20];
-
+	
 	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter for how many month do you want to play?");
+		month=sc.nextInt();
 		Random r=new Random();
-		System.out.println(stake);
 		
-	//For loop taken for 20 days and total amount of win and loss
-		for(int days=0;days<20;days++)
+	//Array declaration.
+	 int arrayDays[]=new int[month*30];
+
+		
+	//For loop taken for a month  and total amount of win and loss
+		for(int days=0;days<month*30;days++)
 		{	
 			int played=r.nextInt(2);
 			if(played==1)
@@ -42,13 +44,14 @@ public class Gambler {
 			{
 				System.out.println("you loss bet");
 				stakeTemp=stakeTemp-half;
-				System.out.println("You loss ny 50");
+				System.out.println("You loss by 50");
 				System.out.println(stake);
 				count0++;
 				
 			}
 				arrayDays[days]=stakeTemp;	
 		}
+		
 				System.out.println("Number of times win : "+count1);
 				System.out.println("Number of times loss : "+count0);
 				winMoney=count1*half;
@@ -84,5 +87,3 @@ public class Gambler {
 				}
 	}
 }
-
-
